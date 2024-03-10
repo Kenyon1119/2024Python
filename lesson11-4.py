@@ -10,7 +10,7 @@ students=[{'國文': 55, '數學': 92, '英文': 66},
           {'國文': 76, '數學': 76, '英文': 81},
           {'國文': 73, '數學': 61, '英文': 97},
           {'國文': 61, '數學': 80, '英文': 50},
-          {'國文': 75, '數學': 98, '英文': 84}]
+          {'國文': 75, '數學': 100, '英文': 84}]
 
 #open()，file物件實體使用open內建function
 #csv module 建立實體(初始化initializer)
@@ -18,11 +18,13 @@ students=[{'國文': 55, '數學': 92, '英文': 66},
 import csv
 
 #建立file實體，這個實體會自動關閉close()->with...as
-with open('students.csv',mode='w',encoding='utf-8',newline='') as csvfile:
+fieldname = input('請輸入檔案名稱:')
+csvname = f'{fieldname}.csv'
+with open(csvname,mode='w',encoding='utf-8',newline='') as csvfile:
     writer=csv.DictWriter(csvfile,fieldnames=['國文','數學','英文'])
     writer.writeheader()
     writer.writerows(students)
 
-print('students.csv存檔完成')    
+print(f'{csvname}.csv存檔完成')    
 ##class csv.DictWriter()
 ##整合式終端機執行
