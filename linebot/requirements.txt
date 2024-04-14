@@ -1,4 +1,4 @@
 flask
 requests
-qunicorn
+gunicorn
 line-bot-sdk
